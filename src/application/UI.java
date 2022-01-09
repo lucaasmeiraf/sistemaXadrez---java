@@ -4,6 +4,7 @@ import xadrez.PecaXadrez;
 
 public class UI {
 
+	//MÉTODO PARA IMPRIMIR O TABULEIRO COM LINHAS E COLUNAS
 	public static void printTabuleiro(PecaXadrez[][] pecas) {
 		
 		for(int i = 0; i < pecas.length; i++) {
@@ -19,6 +20,7 @@ public class UI {
 		
 	}
 	
+	//MÉTODO PARA IMPRIMIR SOMENTE UMA PEÇA
 	private static void printPeca(PecaXadrez peca) {
 		if(peca == null) {
 			System.out.print("-");

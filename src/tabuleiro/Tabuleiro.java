@@ -28,10 +28,12 @@ public class Tabuleiro {
 		this.colunas = colunas;
 	}
 	
+	//METODO PARA RETORNAR A MATRIZ PEÇA NA LINHA E COLUNA INFORMADA
 	public Peca peca(int linha, int coluna) {
 		return pecas[linha][coluna];
 	}
 	
+	// METODO PARA RETORNAR A PEÇA PELA POSIÇÃO INFORMADA
 	public Peca peca(Posicao posicao) {
 		return pecas[posicao.getLinha()][posicao.getColuna()];
 	}
