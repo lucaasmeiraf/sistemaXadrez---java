@@ -1,7 +1,5 @@
 package xadrez;
 
-import tabuleiro.Peca;
-import tabuleiro.Posicao;
 import tabuleiro.Tabuleiro;
 import xadrez.pecas.Rei;
 import xadrez.pecas.Torre;
@@ -30,11 +28,16 @@ public class PartidaXadrez {
 		return mat;
 	}
 	
+	// OPERACAO DE COLOCAR PECA PASSANDO A POSIÇÃO NAS COORDENADAS DO XADREZ
+	private void alocarNovaPeca(char coluna, int linha, PecaXadrez peca) {
+		tabuleiro.alocarPeca(peca, new PosicaoXadrez(coluna, linha).toPosicao());
+	}
+	
 	// METODO PARA SETAR O SETUP INICIAL DO TABULEIRO, POSIÇÃO INICIAL DAS PEÇAS
 	private void setupInicial() {
-		tabuleiro.alocarPeca(new Torre(tabuleiro, Cor.BRANCO), new Posicao(2, 1));
-		tabuleiro.alocarPeca(new Rei(tabuleiro, Cor.PRETO), new Posicao(0, 4));
-		tabuleiro.alocarPeca(new Rei(tabuleiro, Cor.BRANCO), new Posicao(7, 4));
+		alocarNovaPeca('b', 6, new Torre(tabuleiro, Cor.BRANCO));
+		alocarNovaPeca('e', 8, new Rei(tabuleiro, Cor.PRETO));
+		alocarNovaPeca('e', 1, new Rei(tabuleiro, Cor.BRANCO));
 	}
 
 }
